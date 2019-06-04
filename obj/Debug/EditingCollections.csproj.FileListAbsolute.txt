@@ -1,0 +1,35 @@
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\bin\Debug\EditingCollections.exe.config
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\bin\Debug\EditingCollections.exe
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\bin\Debug\EditingCollections.pdb
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\ChangeItem.g.cs
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\MainWindow.g.cs
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\App.g.cs
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections_MarkupCompile.cache
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections_MarkupCompile.lref
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\ChangeItem.baml
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\MainWindow.baml
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections.g.resources
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections.Properties.Resources.resources
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections.csproj.GenerateResource.cache
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections.csproj.CoreCompileInputs.cache
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections.exe
+D:\github repos\WPF-Samples\Data Binding\EditingCollections\obj\Debug\EditingCollections.pdb
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.csprojAssemblyReference.cache
+D:\github repos\Data-Editor\obj\Debug\ChangeItem.g.cs
+D:\github repos\Data-Editor\obj\Debug\MainWindow.g.cs
+D:\github repos\Data-Editor\obj\Debug\App.g.cs
+D:\github repos\Data-Editor\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\github repos\Data-Editor\obj\Debug\EditingCollections_MarkupCompile.cache
+D:\github repos\Data-Editor\obj\Debug\EditingCollections_MarkupCompile.lref
+D:\github repos\Data-Editor\obj\Debug\ChangeItem.baml
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.exe
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.pdb
+D:\github repos\Data-Editor\bin\Debug\EditingCollections.exe.config
+D:\github repos\Data-Editor\bin\Debug\EditingCollections.exe
+D:\github repos\Data-Editor\bin\Debug\EditingCollections.pdb
+D:\github repos\Data-Editor\obj\Debug\MainWindow.baml
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.g.resources
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.Properties.Resources.resources
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.csproj.GenerateResource.cache
+D:\github repos\Data-Editor\obj\Debug\EditingCollections.csproj.CoreCompileInputs.cache
