@@ -1,13 +1,11 @@
 
-# Changing a Collection by Using IEditableCollectionView Sample
-This sample uses the members that are provided by the IEditableCollectionView interface to add and change items in a ListView. The IEditableCollectionView provides a common API so that you can use the same members to add, edit, and remove items of a collection, if the collection supports such operations, regardless of the collection's type.
+# Data Editor
 
-## Build the sample
-The easiest way to use these samples without using Git is to download the zip file containing the current version (using the link below or by clicking the "Download ZIP" button on the repo page). You can then unzip the entire archive and use the samples in [Visual Studio 2015](https://www.visualstudio.com/wpf-vs).
+Implement a handy UI editor to manage a collection of data using MVVM, WPF, DataBinding, Converter, etc. 
 
-### Deploying the sample
-- Select Build > Deploy Solution. 
+This shall have the functionality of: 1. basic operation of add, edit, remove data item. 2. search items by keyword 3. converter between enum and combo option and show data different based on the selected option. 4. serialize and deserialize as JSON object.
 
-### Deploying and running the sample
-- To debug the sample and then run it, press F5 or select Debug >  Start Debugging. To run the sample without debugging, press Ctrl+F5 or selectDebug > Start Without Debugging. 
 
+## Reference
+This project is based on the following sample maintained by Microsoft.
+https://github.com/microsoft/WPF-Samples
