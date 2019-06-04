@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EditingCollections"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="Height" Width="400">
+        Title="MainWindow" SizeToContent="Height" Width="677.268" d:DesignHeight="346.787">
     <StackPanel>
         <StackPanel.Resources>
             <local:DataItemCollection x:Key="MyData"/>
@@ -17,22 +17,22 @@
         </StackPanel.Resources>
 
    
-        <ListView Name="itemsControl"  ItemsSource="{StaticResource MyData}">
+        <ListView Name="itemsControl"  ItemsSource="{StaticResource MyData}" Width="650">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item"
-                          DisplayMemberBinding="{Binding Path=Description}"/>
+                          DisplayMemberBinding="{Binding Path=Description}" Width="270"/>
                     <GridViewColumn Header="Price"
-                          DisplayMemberBinding="{Binding Path=Price, StringFormat=c}"/>
+                          DisplayMemberBinding="{Binding Path=Price, StringFormat=c}" Width="250"/>
                     <GridViewColumn Header="Type"
-                          DisplayMemberBinding="{Binding Path=Type}"/>
+                          DisplayMemberBinding="{Binding Path=Type}" Width="130"/>
                 </GridView>
             </ListView.View>
         </ListView>
         <StackPanel Orientation="Horizontal">
-            <Button Name="add" Click="Add_Click">Add</Button>
-            <Button Name="edit" Click="Edit_Click">Edit</Button>
-            <Button Name="remove" Click="Remove_Click">Remove</Button>
+            <Button x:Name="add" Click="Add_Click" Content="Add"/>
+            <Button x:Name="edit" Click="Edit_Click" Content="Edit"/>
+            <Button x:Name="remove" Click="Remove_Click" Content="Remove"/>
         </StackPanel>
     </StackPanel>
 </Window>

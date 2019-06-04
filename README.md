@@ -1,7 +1,7 @@
 
 # Data Editor
 
-Implement a handy UI editor to manage a collection of data using MVVM, WPF, DataBinding, Converter, etc. 
+Implement a handy UI editor to manage a collection of data using MVVM, WPF, DataBinding, Converter, Linq, etc. 
 
 This shall have the functionality of: 1. basic operation of add, edit, remove data item. 2. search items by keyword 3. converter between enum and combo option and show data different based on the selected option. 4. serialize and deserialize as JSON object.
 
