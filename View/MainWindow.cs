@@ -1,19 +1,25 @@
 ﻿// // Copyright (c) Microsoft. All rights reserved.
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using EditingCollections.DataModel;
 using System.ComponentModel;
 using System.Windows;
 
-namespace EditingCollections
+namespace EditingCollections.View
 {
     /// <summary>
     ///     Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DataEditorMainWindow : Window
     {
-        public MainWindow()
+        public DataEditorMainWindow()
         {
             InitializeComponent();
+        }
+
+        public bool LaunchWindow()
+        {
+            return (bool)ShowDialog();
         }
 
         private void Edit_Click(object sender, RoutedEventArgs e)

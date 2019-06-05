@@ -4,7 +4,7 @@
 using System;
 using System.ComponentModel;
 
-namespace EditingCollections
+namespace EditingCollections.DataModel
 {
     public class DataItem : INotifyPropertyChanged, IEditableObject
     {

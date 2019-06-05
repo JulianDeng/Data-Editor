@@ -3,7 +3,7 @@
 
 using System.Windows;
 
-namespace EditingCollections
+namespace EditingCollections.View
 {
     /// <summary>
     ///     Interaction logic for ChangeItem.xaml

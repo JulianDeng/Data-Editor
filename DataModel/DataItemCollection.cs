@@ -4,7 +4,7 @@
 using System;
 using System.Collections.ObjectModel;
 
-namespace EditingCollections
+namespace EditingCollections.DataModel
 {
     public class DataItemCollection : ObservableCollection<DataItem>
     {
