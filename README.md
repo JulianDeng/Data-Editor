@@ -1,11 +1,11 @@
 
 # Data Editor
 
-Implement a handy UI gadget to manage a collection of editable data. Expected to play with following C# features such as MVVM, WPF, Data Binding, Converter, Linq, Thread, Entity framework, etc. 
+This project starts as a handy UI gadget to manage a collection of editable data. As development proceeds, it is expected to explore the following C# features such as MVVM, WPF, Data Binding, Converter, Linq, C# Thread, Entity framework and more. 
 
 ## Reference
 
-This project is based on the following code sample maintained by Microsoft.
+The initial code is referencing a code sample maintained by Microsoft.
 https://github.com/microsoft/WPF-Samples
 
 ## Run the executable
