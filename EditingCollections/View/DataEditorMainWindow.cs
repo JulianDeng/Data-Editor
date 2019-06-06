@@ -24,19 +24,19 @@ namespace EditingCollections.View
 
         private void Edit_Click(object sender, RoutedEventArgs e)
         {
-            if (itemsControl.SelectedItem == null)
+            if (ItemsControl.SelectedItem == null)
             {
                 MessageBox.Show("No item is selected");
                 return;
             }
 
             var editableCollectionView =
-                itemsControl.Items as IEditableCollectionView;
+                ItemsControl.Items as IEditableCollectionView;
 
             // Create a window that prompts the user to edit an item.
             var win = new ChangeItem();
-            editableCollectionView.EditItem(itemsControl.SelectedItem);
-            win.DataContext = itemsControl.SelectedItem;
+            editableCollectionView.EditItem(ItemsControl.SelectedItem);
+            win.DataContext = ItemsControl.SelectedItem;
 
             // If the user submits the new item, commit the changes.
             // If the user cancels the edits, discard the changes. 
@@ -52,7 +52,7 @@ namespace EditingCollections.View
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            var editableCollectionView = itemsControl.Items as IEditableCollectionView;
+            var editableCollectionView = ItemsControl.Items as IEditableCollectionView;
 
             if (!editableCollectionView.CanAddNew)
             {
@@ -81,7 +81,7 @@ namespace EditingCollections.View
 
         private void Remove_Click(object sender, RoutedEventArgs e)
         {
-            var item = itemsControl.SelectedItem as DataItem;
+            var item = ItemsControl.SelectedItem as DataItem;
 
             if (item == null)
             {
@@ -90,7 +90,7 @@ namespace EditingCollections.View
             }
 
             var editableCollectionView =
-                itemsControl.Items as IEditableCollectionView;
+                ItemsControl.Items as IEditableCollectionView;
 
             if (!editableCollectionView.CanRemove)
             {
@@ -101,7 +101,7 @@ namespace EditingCollections.View
             if (MessageBox.Show("Are you sure you want to remove " + item.Description,
                 "Remove Item", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
             {
-                editableCollectionView.Remove(itemsControl.SelectedItem);
+                editableCollectionView.Remove(ItemsControl.SelectedItem);
             }
         }
         private void Save_Click(object sender, RoutedEventArgs e)

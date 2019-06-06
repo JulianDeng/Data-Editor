@@ -1,4 +1,5 @@
 ﻿using EditingCollections.View;
+using EditingCollections.ViewModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,9 +22,12 @@ namespace HomeApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        public DataEditorViewModel Model { get { return DataContext as DataEditorViewModel; } }
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new DataEditorViewModel();
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
