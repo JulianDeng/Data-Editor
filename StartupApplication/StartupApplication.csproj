@@ -95,8 +95,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Data-Editor\EditingCollections.csproj">
-      <Project>{F0D4337C-FB06-42A4-8D48-C0577BA46D39}</Project>
+    <ProjectReference Include="..\EditingCollections\EditingCollections.csproj">
+      <Project>{f0d4337c-fb06-42a4-8d48-c0577ba46d39}</Project>
       <Name>EditingCollections</Name>
     </ProjectReference>
   </ItemGroup>

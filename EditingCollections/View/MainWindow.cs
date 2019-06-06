@@ -104,6 +104,27 @@ namespace EditingCollections.View
                 editableCollectionView.Remove(itemsControl.SelectedItem);
             }
         }
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Cancel_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void SerializeJson_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void DeserializeJson_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+
     }
 
     // PurchaseItem implements INotifyPropertyChanged so that the 

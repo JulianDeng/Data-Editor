@@ -1,7 +1,9 @@
 // // Copyright (c) Microsoft. All rights reserved.
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
+using EditingCollections.Enum;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace EditingCollections.DataModel
@@ -12,15 +14,33 @@ namespace EditingCollections.DataModel
         private ItemData _currentData;
 
         public DataItem()
-            : this("New item", 0, DateTime.Now)
+            : this("New item", 0)
         {
+
         }
 
-        public DataItem(string desc, double price, DateTime endDate)
+        public DataItem(string desc, double price)
         {
+            GuidID = Guid.NewGuid();
             Description = desc;
             Price = price;
-            OfferExpires = endDate;
+            Type = MyType.None;
+            LastTime = DateTime.Now;
+            LastPrices = new LinkedList<double>();
+            LastRecordGuids = new LinkedList<Guid>();
+        }
+
+        public Guid GuidID
+        {
+            get { return _currentData.GuidID; }
+            set
+            {
+                if (_currentData.GuidID != value)
+                {
+                    _currentData.GuidID = value;
+                    NotifyPropertyChanged("GuidID");
+                }
+            }
         }
 
         public string Description
@@ -49,26 +69,69 @@ namespace EditingCollections.DataModel
             }
         }
 
-        public DateTime OfferExpires
+        public MyType Type
         {
-            get { return _currentData.OfferExpires; }
+            get { return _currentData.Type; }
             set
             {
-                if (value != _currentData.OfferExpires)
+                if (_currentData.Type != value)
                 {
-                    _currentData.OfferExpires = value;
-                    NotifyPropertyChanged("OfferExpires");
+                    _currentData.Type = value;
+                    NotifyPropertyChanged("Type");
                 }
             }
         }
 
-        public override string ToString() => $"{Description}, {Price:c}, {OfferExpires:D}";
+        public DateTime LastTime
+        {
+            get { return _currentData.LastTime; }
+            set
+            {
+                if (value != _currentData.LastTime)
+                {
+                    _currentData.LastTime = value;
+                    NotifyPropertyChanged("LastTime");
+                }
+            }
+        }
+
+        public LinkedList<double> LastPrices
+        {
+            get { return _currentData.LastPrices; }
+            set
+            {
+                if (value != _currentData.LastPrices)
+                {
+                    _currentData.LastPrices = value;
+                    NotifyPropertyChanged("LastPrices");
+                }
+            }
+        }
+
+        public LinkedList<Guid> LastRecordGuids
+        {
+            get { return _currentData.LastRecordGuids; }
+            set
+            {
+                if (value != _currentData.LastRecordGuids)
+                {
+                    _currentData.LastRecordGuids = value;
+                    NotifyPropertyChanged("LastRecordGuids");
+                }
+            }
+        }
+
+        public override string ToString() => $"{Description}, {Price:c}, {LastTime:D}";
 
         private struct ItemData
         {
+            internal Guid GuidID;
             internal string Description;
-            internal DateTime OfferExpires;
             internal double Price;
+            internal MyType Type;
+            internal DateTime LastTime;
+            internal LinkedList<double> LastPrices;
+            internal LinkedList<Guid> LastRecordGuids;
         }
 
         #region INotifyPropertyChanged Members
