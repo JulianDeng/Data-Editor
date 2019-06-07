@@ -8,13 +8,13 @@ namespace EditingCollections.Enum
 {
     public enum MyType
     {
-        [Description("None")]
+        [Description("")]
         None,
-        [Description("String")]
+        [Description("")]
         String,
-        [Description("Percentage")]
+        [Description("")]
         Percentage,
-        [Description("Currency")]
-        Currency,
+        [Description("")]
+        Currency
     }
 }

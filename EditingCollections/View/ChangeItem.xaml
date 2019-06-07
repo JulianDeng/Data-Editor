@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:model="clr-namespace:EditingCollections.DataModel"
+        xmlns:converter="clr-namespace:EditingCollections.Converter"
         mc:Ignorable="d"
         Title="ChangeItem" Height="300" Width="300">
+    <Window.Resources>
+        <converter:ValueTypeConverter x:Key="ValueTypeConverter"/>
+    </Window.Resources>
     <StackPanel Margin="10" Width="250">
         <StackPanel.Resources>
             <Style TargetType="HeaderedContentControl">
@@ -39,8 +42,8 @@
         <HeaderedContentControl Header="Price">
             <TextBox Width="150" Text="{Binding Path=Price, Mode=TwoWay}"/>
         </HeaderedContentControl>
-        <HeaderedContentControl Header="Date Offer Ends">
-            <TextBox Width="150" Text="{Binding Path=OfferExpires, StringFormat=d, Mode=TwoWay}"/>
+        <HeaderedContentControl Header="Type">
+            <ComboBox Name="Type_combo" Width="150" ItemsSource="{Binding Source={StaticResource ValueTypeConverter}, Path=Strings}" SelectedItem="{Binding Type, Converter={StaticResource ValueTypeConverter}}"/>
         </HeaderedContentControl>
         <StackPanel Orientation="Horizontal">
             <Button IsDefault="True" Click="Submit_Click">_Submit</Button>
