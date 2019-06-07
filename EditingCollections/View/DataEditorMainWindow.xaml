@@ -6,12 +6,15 @@
         xmlns:model="clr-namespace:EditingCollections.DataModel"
         mc:Ignorable="d"
         Title="MainWindow" SizeToContent="Height" Width="958.268" Height="477.787">
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+    </Window.Resources>
     <StackPanel>
         <StackPanel Orientation="Horizontal">
             <TextBlock  Margin="5,5,681,5" Width="100"><Run Text="Search by Name"/></TextBlock>
         </StackPanel>
         <TextBox Margin="5,5,681,5"/>
-        <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}">
+        <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Height="195">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item"
@@ -26,17 +29,17 @@
             </ListView.View>
         </ListView>
         <StackPanel Orientation="Horizontal">
-            <Button x:Name="Add" Click="Add_Click" Content="Add" Width="90"/>
-            <Button x:Name="Edit" Click="Edit_Click" Content="Edit" Width="90"/>
-            <Button x:Name="Remove" Click="Remove_Click" Content="Remove" Width="90"/>
+            <Button x:Name="Add" Click="Add_Click" Content="Add" Width="90" IsEnabled="{Binding IsEnabled}"/>
+            <Button x:Name="Edit" Click="Edit_Click" Content="Edit" Width="90" IsEnabled="{Binding IsEnabled}"/>
+            <Button x:Name="Remove" Click="Remove_Click" Content="Remove" Width="90" IsEnabled="{Binding IsEnabled}"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button x:Name="Save" Click="Save_Click" Content="Save" Width="90"/>
+            <Button x:Name="Save" Click="Save_Click" Content="Save" Width="90" IsEnabled="{Binding IsEnabled}"/>
             <Button x:Name="Cancel" Click="Cancel_Click" Content="Cancel" Width="90"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal">
-            <Button x:Name="SerializeJson" Click="SerializeJson_Click" Content="SerializeJSON" Width="90"/>
-            <Button x:Name="DeserializeJson" Click="DeserializeJson_Click" Content="DeserializeJSON" Width="90"/>
+            <Button x:Name="SerializeJson" Click="SerializeJson_Click" Content="SerializeJSON" Width="90" Visibility="{Binding IsAdminUser, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsEnabled}"/>
+            <Button x:Name="DeserializeJson" Click="DeserializeJson_Click" Content="DeserializeJSON" Width="90" Visibility="{Binding IsAdminUser, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsEnabled}"/>
         </StackPanel>
         <StackPanel Height="118" Margin="0,0,666,0">
             <TextBlock FontSize="20"><Run Text="History"/></TextBlock>

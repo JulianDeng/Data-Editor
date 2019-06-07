@@ -2,6 +2,7 @@
 // // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 using EditingCollections.DataModel;
+using EditingCollections.ViewModel;
 using System.ComponentModel;
 using System.Windows;
 
@@ -12,9 +13,12 @@ namespace EditingCollections.View
     /// </summary>
     public partial class DataEditorMainWindow : Window
     {
+        private DataEditorViewModel Model { get { return DataContext as DataEditorViewModel; } }
+
         public DataEditorMainWindow()
         {
             InitializeComponent();
+            DataContext = new DataEditorViewModel();
         }
 
         public bool LaunchWindow()

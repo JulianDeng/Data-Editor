@@ -2,6 +2,7 @@
 using Prism.Mvvm;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 
@@ -11,11 +12,13 @@ namespace EditingCollections.ViewModel
     {
         private DataItemCollection _dataItems;
         private DataItemCollection _viewItems;
+        private bool _isEnabled;
 
         public DataEditorViewModel()
         {
             _dataItems = new DataItemCollection();
             _viewItems = new DataItemCollection();
+            _isEnabled = true;
         }
 
         public DataItemCollection DataItems
@@ -35,6 +38,21 @@ namespace EditingCollections.ViewModel
             {
                 this._viewItems = value;
                 this.OnPropertyChanged(() => ViewItems);
+            }
+        }
+
+        public bool IsAdminUser
+        {
+            get { return ConfigurationManager.AppSettings.Get("adminUser").Contains(Environment.UserName); }
+        }
+
+        public bool IsEnabled
+        {
+            get { return this._isEnabled; }
+            set
+            {
+                this._isEnabled = value;
+                this.OnPropertyChanged(() => IsEnabled);
             }
         }
     }
