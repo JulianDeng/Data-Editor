@@ -9,43 +9,35 @@
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     </Window.Resources>
-    <StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <TextBlock  Margin="5,5,681,5" Width="100"><Run Text="Search by Name"/></TextBlock>
-        </StackPanel>
-        <TextBox Margin="5,5,681,5" x:Name="itemSearchText" TextChanged="ItemSearchText_TextChanged"/>
-        <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Height="195" MouseDoubleClick="Edit_Click">
+    <Grid>
+        <TextBlock  Margin="17,60,833,368" Width="100"><Run Text="Search by Name"/></TextBlock>
+        <TextBox Margin="17,84,791,343" x:Name="itemSearchText" TextChanged="ItemSearchText_TextChanged"/>
+        <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Height="195" Width="600" MouseDoubleClick="Edit_Click" Margin="17,118,333,134">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item"
-                          DisplayMemberBinding="{Binding Description}" Width="270"/>
+                          DisplayMemberBinding="{Binding Description}" Width="200"/>
                     <GridViewColumn Header="Price"
-                          DisplayMemberBinding="{Binding Price, StringFormat=c}" Width="250"/>
+                          DisplayMemberBinding="{Binding Price, StringFormat=c}" Width="100"/>
                     <GridViewColumn Header="Type"
-                          DisplayMemberBinding="{Binding Type}" Width="130"/>
+                          DisplayMemberBinding="{Binding Type}" Width="100"/>
                     <GridViewColumn Header="Last Update Time"
                           DisplayMemberBinding="{Binding LastTime}" Width="200"/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <StackPanel Orientation="Horizontal">
-            <Button x:Name="Add" Click="Add_Click" Content="Add" Width="90" IsEnabled="{Binding IsEnabled}"/>
-            <Button x:Name="Edit" Click="Edit_Click" Content="Edit" Width="90" IsEnabled="{Binding IsEnabled}"/>
-            <Button x:Name="Remove" Click="Remove_Click" Content="Remove" Width="90" IsEnabled="{Binding IsEnabled}"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Button x:Name="Save" Click="Save_Click" Content="Save" Width="90" IsEnabled="{Binding IsEnabled}"/>
-            <Button x:Name="Cancel" Click="Cancel_Click" Content="Cancel" Width="90"/>
-        </StackPanel>
-        <StackPanel Orientation="Horizontal">
-            <Button x:Name="SerializeJson" Click="SerializeJson_Click" Content="SerializeJSON" Width="90" Visibility="{Binding IsAdminUser, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsEnabled}"/>
-            <Button x:Name="DeserializeJson" Click="DeserializeJson_Click" Content="DeserializeJSON" Width="90" Visibility="{Binding IsAdminUser, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsEnabled}"/>
-        </StackPanel>
-        <StackPanel Height="118" Margin="0,0,666,0">
+        <Button x:Name="Add" Click="Add_Click" Content="Add" Width="90" Height="30" IsEnabled="{Binding IsEnabled}" Margin="17,347,843,70"/>
+        <Button x:Name="Edit" Click="Edit_Click" Content="Edit" Width="90" Height="30" IsEnabled="{Binding IsEnabled}" Margin="137,347,723,70"/>
+        <Button x:Name="Remove" Click="Remove_Click" Content="Remove" Width="90" Height="30" IsEnabled="{Binding IsEnabled}" Margin="261,347,599,70"/>
+        <Button x:Name="Save" Click="Save_Click" Content="Save" Width="90" Height="30" IsEnabled="{Binding IsEnabled}" Margin="387,347,473,70"/>
+        <Button x:Name="Cancel" Click="Cancel_Click" Content="Cancel" Width="90" Height="30" Margin="511,347,349,70"/>
+        <Button x:Name="SerializeJson" Click="SerializeJson_Click" Content="SerializeJSON" Width="90" Height="30" Visibility="{Binding IsAdminUser, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsEnabled}" Margin="653,64,207,353" RenderTransformOrigin="4.322,-9.433"/>
+        <Button x:Name="DeserializeJson" Click="DeserializeJson_Click" Content="DeserializeJSON" Width="90" Height="30" Visibility="{Binding IsAdminUser, Converter={StaticResource BooleanToVisibilityConverter}}" IsEnabled="{Binding IsEnabled}" Margin="764,64,96,353"/>
+        <StackPanel Margin="642,118,29,134">
             <TextBlock FontSize="20"><Run Text="History"/></TextBlock>
-            <Border Height="91">
+            <Border Height="168" BorderThickness="1" BorderBrush="Black">
                 <Grid/>
             </Border>
         </StackPanel>
-    </StackPanel>
+    </Grid>
 </Window>
