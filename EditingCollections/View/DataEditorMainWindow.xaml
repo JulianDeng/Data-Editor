@@ -13,8 +13,8 @@
         <StackPanel Orientation="Horizontal">
             <TextBlock  Margin="5,5,681,5" Width="100"><Run Text="Search by Name"/></TextBlock>
         </StackPanel>
-        <TextBox Margin="5,5,681,5"/>
-        <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Height="195">
+        <TextBox Margin="5,5,681,5" x:Name="itemSearchText" TextChanged="ItemSearchText_TextChanged"/>
+        <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Height="195" MouseDoubleClick="Edit_Click">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Item"

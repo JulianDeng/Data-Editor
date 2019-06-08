@@ -128,7 +128,10 @@ namespace EditingCollections.View
 
         }
 
-
+        private void ItemSearchText_TextChanged(object sender, System.Windows.Controls.TextChangedEventArgs e)
+        {
+            Model.ViewItemsContextSwitch(itemSearchText.Text);
+        }
     }
 
     // PurchaseItem implements INotifyPropertyChanged so that the 

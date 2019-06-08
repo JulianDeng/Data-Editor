@@ -55,5 +55,17 @@ namespace EditingCollections.ViewModel
                 this.OnPropertyChanged(() => IsEnabled);
             }
         }
+
+        internal void ViewItemsContextSwitch(string text)
+        {
+            ViewItems.Clear();
+            foreach(DataItem dItem in DataItems)
+            {
+                if (dItem.Description.Contains(text))
+                {
+                    ViewItems.Add(dItem);
+                }
+            }
+        }
     }
 }
