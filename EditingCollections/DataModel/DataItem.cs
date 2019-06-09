@@ -14,19 +14,19 @@ namespace EditingCollections.DataModel
         private ItemData _currentData;
 
         public DataItem()
-            : this("New item", 0)
+            : this("New item", "Enter value")
         {
 
         }
 
-        public DataItem(string desc, double price)
+        public DataItem(string desc, string value)
         {
             GuidID = Guid.NewGuid();
             Description = desc;
-            Price = price;
+            Value = value;
             Type = MyType.None;
             LastTime = DateTime.Now;
-            LastPrices = new LinkedList<double>();
+            LastPrices = new LinkedList<string>();
             LastRecordGuids = new LinkedList<Guid>();
         }
 
@@ -56,15 +56,15 @@ namespace EditingCollections.DataModel
             }
         }
 
-        public double Price
+        public string Value
         {
-            get { return _currentData.Price; }
+            get { return _currentData.Value; }
             set
             {
-                if (_currentData.Price != value)
+                if (_currentData.Value != value)
                 {
-                    _currentData.Price = value;
-                    NotifyPropertyChanged("Price");
+                    _currentData.Value = value;
+                    NotifyPropertyChanged("Value");
                 }
             }
         }
@@ -95,7 +95,7 @@ namespace EditingCollections.DataModel
             }
         }
 
-        public LinkedList<double> LastPrices
+        public LinkedList<string> LastPrices
         {
             get { return _currentData.LastPrices; }
             set
@@ -121,16 +121,16 @@ namespace EditingCollections.DataModel
             }
         }
 
-        public override string ToString() => $"{Description}, {Price:c}, {LastTime:D}";
+        public override string ToString() => $"{Description}, {Value:c}, {LastTime:D}";
 
         private struct ItemData
         {
             internal Guid GuidID;
             internal string Description;
-            internal double Price;
+            internal string Value;
             internal MyType Type;
             internal DateTime LastTime;
-            internal LinkedList<double> LastPrices;
+            internal LinkedList<string> LastPrices;
             internal LinkedList<Guid> LastRecordGuids;
         }
 

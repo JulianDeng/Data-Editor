@@ -3,11 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:converter="clr-namespace:EditingCollections.Converter"
         xmlns:model="clr-namespace:EditingCollections.DataModel"
         mc:Ignorable="d"
-        Title="MainWindow" SizeToContent="Height" Width="958.268" Height="477.787">
+        Title="MainWindow" SizeToContent="Height" Width="977.268" Height="479.787">
     <Window.Resources>
         <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <converter:ValueConverter x:Key="ValueConverter"/>
     </Window.Resources>
     <Grid>
         <TextBlock  Margin="17,60,833,368" Width="100"><Run Text="Search by Name"/></TextBlock>
@@ -17,8 +19,14 @@
                 <GridView>
                     <GridViewColumn Header="Item"
                           DisplayMemberBinding="{Binding Description}" Width="200"/>
-                    <GridViewColumn Header="Price"
-                          DisplayMemberBinding="{Binding Price, StringFormat=c}" Width="100"/>
+                    <GridViewColumn Header="Value" Width="100">
+                        <GridViewColumn.DisplayMemberBinding>
+                            <MultiBinding Converter="{StaticResource ValueConverter}">
+                            <Binding Path="Value"/>
+                            <Binding Path="Type"/>
+                            </MultiBinding>
+                        </GridViewColumn.DisplayMemberBinding>
+                    </GridViewColumn>
                     <GridViewColumn Header="Type"
                           DisplayMemberBinding="{Binding Type}" Width="100"/>
                     <GridViewColumn Header="Last Update Time"

@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Converter\ValueConverter.cs" />
     <Compile Include="Converter\ValueTypeConverter.cs" />
     <Compile Include="DataModel\DataItemCollection.cs" />
     <Compile Include="DataModel\DataItem.cs" />

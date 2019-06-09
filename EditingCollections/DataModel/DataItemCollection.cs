@@ -10,13 +10,13 @@ namespace EditingCollections.DataModel
     {
         public DataItemCollection()
         {
-            Add((new DataItem("Snowboard and bindings", 120)));
-            Add((new DataItem("Inside C#, second edition", 10)));
-            Add((new DataItem("Laptop - only 1 year old", 499.99)));
-            Add((new DataItem("Set of 6 chairs", 120)));
-            Add((new DataItem("My DVD Collection", 15)));
-            Add((new DataItem("TV Drama Series", 39.985)));
-            Add((new DataItem("Squash racket", 60)));
+            Add((new DataItem("Snowboard and bindings", "120")));
+            Add((new DataItem("Inside C#, second edition", "10")));
+            Add((new DataItem("Laptop - only 1 year old", "499.99")));
+            Add((new DataItem("Set of 6 chairs", "120")));
+            Add((new DataItem("My DVD Collection", "15")));
+            Add((new DataItem("TV Drama Series", "39.985")));
+            Add((new DataItem("Squash racket", "60")));
         }
     }
 }

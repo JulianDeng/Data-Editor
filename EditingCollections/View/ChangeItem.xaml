@@ -40,7 +40,7 @@
             <TextBox Width="150" Text="{Binding Path=Description, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="Price">
-            <TextBox Width="150" Text="{Binding Path=Price, Mode=TwoWay}"/>
+            <TextBox Width="150" Text="{Binding Path=Value, Mode=TwoWay}"/>
         </HeaderedContentControl>
         <HeaderedContentControl Header="Type">
             <ComboBox Name="Type_combo" Width="150" ItemsSource="{Binding Source={StaticResource ValueTypeConverter}, Path=Strings}" SelectedItem="{Binding Type, Converter={StaticResource ValueTypeConverter}}"/>
