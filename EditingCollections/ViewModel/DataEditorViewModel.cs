@@ -13,6 +13,7 @@ namespace EditingCollections.ViewModel
         private DataItemCollection _dataItems;
         private DataItemCollection _viewItems;
         private bool _isEnabled;
+        private string _nameSearch;
 
         public DataEditorViewModel()
         {
@@ -56,12 +57,23 @@ namespace EditingCollections.ViewModel
             }
         }
 
-        internal void ViewItemsContextSwitch(string text)
+        public string NameSearch
+        {
+            get { return this._nameSearch; }
+            set
+            {
+                this._nameSearch = value;
+                this.OnPropertyChanged(() => NameSearch);
+                OnSearchTextChanged();
+            }
+        }
+
+        internal void OnSearchTextChanged()
         {
             ViewItems.Clear();
             foreach(DataItem dItem in DataItems)
             {
-                if (dItem.Description.Contains(text))
+                if (dItem.Description.Contains(NameSearch))
                 {
                     ViewItems.Add(dItem);
                 }

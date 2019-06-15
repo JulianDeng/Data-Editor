@@ -13,7 +13,7 @@
     </Window.Resources>
     <Grid>
         <TextBlock  Margin="17,60,833,368" Width="100"><Run Text="Search by Name"/></TextBlock>
-        <TextBox Margin="17,84,791,343" x:Name="itemSearchText" TextChanged="ItemSearchText_TextChanged"/>
+        <TextBox Margin="26,81,781,346" x:Name="itemSearchText" Text="{Binding NameSearch, UpdateSourceTrigger=PropertyChanged}"/>
         <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Height="195" Width="600" MouseDoubleClick="Edit_Click" Margin="17,118,333,134">
             <ListView.View>
                 <GridView>
