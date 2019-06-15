@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace EditingCollections.ViewModel
 {
@@ -73,7 +74,7 @@ namespace EditingCollections.ViewModel
             ViewItems.Clear();
             foreach(DataItem dItem in DataItems)
             {
-                if (dItem.Description.Contains(NameSearch))
+                if (Regex.IsMatch(dItem.Description, NameSearch == null ? "" : NameSearch, RegexOptions.IgnoreCase))
                 {
                     ViewItems.Add(dItem);
                 }
