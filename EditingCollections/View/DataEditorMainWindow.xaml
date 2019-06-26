@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"        
         xmlns:converter="clr-namespace:EditingCollections.Converter"
         xmlns:model="clr-namespace:EditingCollections.DataModel"
         mc:Ignorable="d"
@@ -14,6 +15,7 @@
     <Grid>
         <TextBlock  Margin="17,60,833,368" Width="100"><Run Text="Search by Name"/></TextBlock>
         <TextBox Margin="26,81,781,517" x:Name="itemSearchText" Text="{Binding NameSearch, UpdateSourceTrigger=PropertyChanged}"/>
+        
         <ListView x:Name="ItemsControl"  ItemsSource="{Binding Path = ViewItems}" Width="600" Height="400" MouseDoubleClick="Edit_Click" Margin="26,118,343,95">
             <ListView.View>
                 <GridView>
@@ -47,5 +49,8 @@
                 <Grid/>
             </Border>
         </StackPanel>
+        <Border BorderBrush="Black" BorderThickness="0" HorizontalAlignment="Left" Height="100" Margin="222,272,0,0" VerticalAlignment="Top" Width="209">
+            <xctk:BusyIndicator Name="BusyBar" IsBusy="{Binding IsBusy}"/>
+        </Border>
     </Grid>
 </Window>

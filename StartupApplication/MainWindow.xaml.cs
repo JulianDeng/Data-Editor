@@ -22,15 +22,20 @@ namespace HomeApplication
     /// </summary>
     public partial class MainWindow : Window
     {
+        private MainWindowViewModel Model { get { return DataContext as MainWindowViewModel; } }
+
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
+            Model.IsBusy = true;
             DataEditorMainWindow win = new DataEditorMainWindow();
             win.LaunchWindow();
+            Model.IsBusy = false;
         }
     }
 }

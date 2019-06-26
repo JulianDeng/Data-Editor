@@ -13,6 +13,7 @@ namespace EditingCollections.ViewModel
     {
         private DataItemCollection _dataItems;
         private DataItemCollection _viewItems;
+        private bool _isBusy;
         private bool _isEnabled;
         private string _nameSearch;
 
@@ -46,6 +47,16 @@ namespace EditingCollections.ViewModel
         public bool IsAdminUser
         {
             get { return ConfigurationManager.AppSettings.Get("adminUser").Contains(Environment.UserName); }
+        }
+
+        public bool IsBusy
+        {
+            get { return this._isBusy ; }
+            set
+            {
+                this._isBusy = value;
+                this.OnPropertyChanged(() => IsBusy);
+            }
         }
 
         public bool IsEnabled
