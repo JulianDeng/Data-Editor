@@ -14,17 +14,17 @@ namespace EditingCollections.DataModel
         private ItemData _currentData;
 
         public DataItem()
-            : this("New item", "Enter value")
+            : this("New item", "Enter value", MyType.None)
         {
 
         }
 
-        public DataItem(string desc, string value)
+        public DataItem(string desc, string value, MyType type)
         {
             GuidID = Guid.NewGuid();
             Description = desc;
             Value = value;
-            Type = MyType.None;
+            Type = type;
             LastTime = DateTime.Now;
             LastPrices = new LinkedList<string>();
             LastRecordGuids = new LinkedList<Guid>();
