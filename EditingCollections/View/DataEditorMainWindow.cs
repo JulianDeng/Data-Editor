@@ -18,7 +18,6 @@ namespace EditingCollections.View
         public DataEditorMainWindow()
         {
             InitializeComponent();
-            DataContext = new DataEditorViewModel();
         }
 
         public bool LaunchWindow()

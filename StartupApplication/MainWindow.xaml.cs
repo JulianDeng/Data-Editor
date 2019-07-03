@@ -33,9 +33,19 @@ namespace HomeApplication
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
             Model.IsBusy = true;
+
+            var dispatcher = Application.Current.Dispatcher;
             DataEditorMainWindow win = new DataEditorMainWindow();
-            win.LaunchWindow();
-            Model.IsBusy = false;
+            Task.Factory.StartNew(() =>
+            {
+                DataEditorViewModel vm = new DataEditorViewModel();
+                dispatcher.Invoke(() =>
+                {
+                    win.DataContext = vm;
+                    win.LaunchWindow();
+                    Model.IsBusy = false;
+                });
+            });
         }
     }
 }
