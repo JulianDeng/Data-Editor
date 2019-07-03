@@ -11,6 +11,11 @@ namespace EditingCollections.DataModel
     {
         public DataItemCollection()
         {
+
+        }
+
+        public void generateRandomItems()
+        {
             Add((new DataItem("Snowboard and bindings", "120", MyType.Currency))); ;
             Add((new DataItem("Inside C#, second edition", "10", MyType.Percentage)));
             Add((new DataItem("Laptop - only 1 year old", "499.99", MyType.Currency)));
@@ -27,9 +32,9 @@ namespace EditingCollections.DataModel
             MyType[] types = { MyType.String, MyType.Percentage, MyType.Currency };
 
 
-            for(int i = 0; i < 200000; i++)
+            for (int i = 0; i < 2000000; i++)
             {
-                for(int j = 0; j < stringChars.Length; j++)
+                for (int j = 0; j < stringChars.Length; j++)
                 {
                     stringChars[j] = chars[random.Next(chars.Length)];
                 }
@@ -38,7 +43,6 @@ namespace EditingCollections.DataModel
 
                 Add(new DataItem(new string(stringChars), value.ToString(), types[random.Next(types.Length)]));
             }
-
         }
     }
 }

@@ -6,6 +6,8 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using System.Windows;
 
 namespace EditingCollections.ViewModel
 {
@@ -82,14 +84,26 @@ namespace EditingCollections.ViewModel
 
         internal void OnSearchTextChanged()
         {
-            ViewItems.Clear();
-            foreach(DataItem dItem in DataItems)
+            IsBusy = true;
+            var dispatcher = Application.Current.Dispatcher;
+            var dItems = DataItems;
+            var vItems = new DataItemCollection();
+            Task.Factory.StartNew(() =>
             {
-                if (Regex.IsMatch(dItem.Description, NameSearch == null ? "" : NameSearch, RegexOptions.IgnoreCase))
+                foreach (DataItem dItem in dItems)
                 {
-                    ViewItems.Add(dItem);
+                    if (Regex.IsMatch(dItem.Description, NameSearch == null ? "" : NameSearch, RegexOptions.IgnoreCase))
+                    {
+                        vItems.Add(dItem);
+                    }
                 }
-            }
+                dispatcher.Invoke(() =>
+                {
+                    ViewItems.Clear();
+                    ViewItems = vItems;
+                    IsBusy = false;
+                });
+            });
         }
     }
 }

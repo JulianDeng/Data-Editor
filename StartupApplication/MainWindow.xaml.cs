@@ -1,4 +1,5 @@
-﻿using EditingCollections.View;
+﻿using EditingCollections.DataModel;
+using EditingCollections.View;
 using EditingCollections.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -39,6 +40,11 @@ namespace HomeApplication
             Task.Factory.StartNew(() =>
             {
                 DataEditorViewModel vm = new DataEditorViewModel();
+                vm.DataItems.generateRandomItems();
+                foreach(DataItem dItem in vm.DataItems)
+                {
+                    vm.ViewItems.Add(dItem);
+                }
                 dispatcher.Invoke(() =>
                 {
                     win.DataContext = vm;
